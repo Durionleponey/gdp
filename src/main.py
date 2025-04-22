@@ -19,6 +19,9 @@ class TestCalculerMoyenne(unittest.TestCase):
 
     def test_liste6(self):
         self.assertEqual(calculer_moyenne([1, -1]), 0)
+        
+    def test_liste6(self):
+        self.assertEqual(calculer_moyenne([1, -1]), 1)
 
 if __name__ == '__main__':
     unittest.main()
