@@ -1,27 +1,24 @@
-from utils import *
 import unittest
+from utils import calculer_moyenne
 
-if __name__ == "__main__":
+class TestCalculerMoyenne(unittest.TestCase):
+    def test_liste1(self):
+        self.assertEqual(calculer_moyenne([1, 2, 3, 4, 5]), 3)
 
-  
+    def test_liste2(self):
+        self.assertAlmostEqual(calculer_moyenne([0, 0, 1]), 1/3)
 
-  print("Voici quelques tests:")
+    def test_liste3(self):
+        self.assertIsNone(calculer_moyenne([]))
 
-  liste1 = [1, 2, 3, 4, 5]
-  liste2= [0,0,1]
-  liste3= []
-  liste4= [0,0,0]
-  liste5= [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-  liste6= [1,-1]
-  
-  #moyenne1 = calculer_moyenne(liste1)
-  #print(f"La moyenne de {liste1} est : {moyenne1}")
+    def test_liste4(self):
+        self.assertEqual(calculer_moyenne([0, 0, 0]), 0)
 
-  self.assertEqual(calculer_moyenne(liste1), 3)
-  self.assertEqual(calculer_moyenne(liste2), 1/3)
-  self.assertEqual(calculer_moyenne(liste3), None)
-  self.assertEqual(calculer_moyenne(liste4), 0)
-  self.assertEqual(calculer_moyenne(liste5), 1)
-  self.assertEqual(calculer_moyenne(liste6), 0)
-  
+    def test_liste5(self):
+        self.assertEqual(calculer_moyenne([1]*21), 1)
 
+    def test_liste6(self):
+        self.assertEqual(calculer_moyenne([1, -1]), 0)
+
+if __name__ == '__main__':
+    unittest.main()
