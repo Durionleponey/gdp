@@ -16,4 +16,4 @@ jobs:
           auto-activate-base: true
 
       - name: Run main.py
-        run: python main.py
+        run: python src/main.py
